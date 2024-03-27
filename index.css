@@ -1,0 +1,465 @@
+:root {
+  --dark-text: #f8fbff;
+  --light-body: #f3f8fe;
+  --light-main: #fdfdfd;
+  --light-second: #c3c2c8;
+  --light-hover: #f0f0f0;
+  --light-text: #151426;
+  --light-btn: #d395a7;
+  --blue: #5ba4d4;
+  --white: #fff;
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --font-family: consolas;
+}
+body {
+  padding: 50px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  place-items: center;
+  font-family: var(--font-family);
+  background: linear-gradient(to right, #cc8a9e, #7c4f5a);
+  overflow: hidden;
+}
+
+
+/* NOTEEE */
+.container {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+#app {
+  flex: 1;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 24px;
+}
+
+.note {
+  height: 200px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: #ddcfd6; /* Adiciona cor de fundo */
+  color: #282828;
+}
+
+.add-note-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-note {
+  height: 200px; /* Ajusta a altura do botão */
+  width: 100px; /* Ajusta a largura do botão */
+  border: none;
+  outline: none;
+  background: var(--light-btn); /* Cor do botão */
+  opacity: 0.5;
+  border-radius: 10px;
+  font-size: 40px; /* Ajusta o tamanho da fonte */
+  color: var(--dark-text); /* Cor do texto */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-note:hover {
+  background: #7c4f5a; /* Cor do botão ao passar o mouse */
+  color: var(--white); /* Cor do texto ao passar o mouse */
+}
+
+textarea {
+  background-color: #cc8a9e; /* Cor de fundo do textarea */
+  box-shadow: var(--shadow);
+  color: #151426; /* Cor do texto */
+  font-weight: bold;
+}
+
+::placeholder {
+  color: var(--light-text); /* Cor do placeholder */
+}
+
+
+/* CALENDAR */
+
+
+.calendar {
+  height: 580px;
+  width: 700px;
+  background-color: #ddcfd6;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.calendar-header {
+  background: #cc8a9e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--white);
+  padding: 10px;
+}
+
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+  align-items: center; /* Alinha os itens verticalmente */
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: var(--color-txt);
+}
+
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+  text-align: center; /* Alinha o texto ao centro */
+  box-sizing: border-box;
+}
+
+/*month*/
+
+.month-picker {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.month-picker:hover {
+  background-color: var(--color-hover);
+}
+.month-picker:hover {
+  color: var(--color-txt);
+}
+
+
+/*year*/
+
+.year-picker {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adiciona margem à direita para separar o ano das setas */
+}
+
+.year-change {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--light-btn);
+  color: var(--dark-text);
+  margin: 0 5px; /* Adiciona margem entre as setas */
+}
+
+.year-change:hover {
+  background-color: var(--light-btn);
+  transition:all .2s ease-in-out ;
+  transform: scale(1.12);
+}
+.year-change:hover pre {
+  color: var(--bg-body);
+}
+
+/* calendar footer */
+
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#year:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2 ease-in-out;
+}
+.calendar-days div span {
+  position: absolute;
+}
+ .calendar-days div:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #a1838b;
+  border-radius: 20%;
+  color: var(--dark-text);
+}
+.calendar-days div.current-date {
+  color: var(--dark-text);
+  background-color: var(--light-btn);
+  border-radius: 20%;
+}
+.month-list {
+  position: relative;
+  left: 0;
+  top: -50px;
+  background-color: #ebebeb;
+  color: var(--light-text);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  border-radius: 20px;
+}
+.month-list > div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+.month-list > div > div {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.month-list > div > div:hover {
+  background-color:var(--light-btn);
+  color: var(--dark-text);
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+.month-list.show {
+  visibility: visible;
+  pointer-events: visible;
+  transition: 0.6s ease-in-out;
+  animation: to-left .71s forwards;
+}
+.month-list.hideonce{
+  visibility: hidden;
+}
+.month-list.hide {
+  animation: to-right 1s forwards;
+  visibility: none;
+  pointer-events: none;
+}
+.date-time-formate {
+  width: max-content;
+  height: max-content;
+  font-family: Dubai Light, Century Gothic;
+  position: relative;
+  display: inline;
+  top: 140px;
+  justify-content: center;
+  margin: 100px;
+}
+.day-text-formate {
+  font-family: Microsoft JhengHei UI;
+  font-size: 1.4rem;
+  padding-right: 5%;
+  border-right: 3px solid #cc8a9e;
+  position: absolute;
+  left: -1rem;
+}
+.date-time-value {
+  display: block;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  left: 40%;
+  top: -18px;
+  text-align: center;
+}
+.time-formate {
+  font-size: 1.5rem;
+}
+.time-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+.day-text-formate.hidetime {
+  animation: hidetime 1.5s forwards;
+}
+.date-formate.hideTime {
+  animation: hidetime 1.5s forwards;
+}
+.day-text-formate.showtime{
+  animation: showtime 1s forwards;
+}
+.time-formate.showtime {
+  animation: showtime 1s forwards;
+}
+.date-formate.showtime {
+  animation: showtime 1s forwards;
+}
+@keyframes to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+@keyframes to-left {
+  0% {
+    transform: translatex(230%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+@keyframes to-right {
+  10% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(-150%);
+    opacity: 1;
+  }
+}
+@keyframes showtime {
+  0% {
+    transform: translatex(250%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+}
+@keyframes hidetime {
+  0% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(-370%);
+    opacity: 1;
+  }
+}
+@media (max-width:375px) {
+  .month-list>div{
+
+    margin: 5px 0px;
+  }
+}
+
+
+
+
+/* TEXT INSPOOOO*/
+#text-inspo {
+  display: flex;
+}
+#text-inspo {
+  position: absolute; /* Posiciona o elemento de forma absoluta */
+  bottom: 100px; /* Define a distância do elemento até a parte inferior da tela */
+  right: 240px; /* Define a distância do elemento até a borda direita da tela */
+  text-align: right; /* Alinha o texto à direita */
+  color: var(--dark-text); /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+}
+
+
+#text-inspo h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #c3c2c8;
+}
+
+#text-inspo h2{
+  font-family: 'Lato', sans-serif;
+  color: #3f3134;
+}
+
+#text-inspo h3 {
+  font-family: 'Lato', sans-serif;
+  color: #794c58;
+  font-size: 25px;
+}
+
+#text-inspo h4{
+  font-family: 'Lato', sans-serif;
+  color: #7c4f5a;
+  font-size: 22px;
+}
+
+
+
+
+
+
+/*body {
+  margin: 0;
+  background: #262442;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  padding: 24px;
+  gap: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .contianer {
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    padding: 2% 0px 0px 0px;
+    justify-content: center;
+    top: 10%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .aesth-images, img {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    align-items: center;
+    border-radius: 15px;
+  }
+
+
+  

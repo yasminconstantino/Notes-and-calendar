@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yasmin Constantino">
+    <meta name="date" content="2024-01-06">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim Notes and Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="stickyNote.png">
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="app">
+        <button class="add-note" type="button">+</button>
+      </div>
+      <div class="calendar">
+        <div class="calendar-header">
+          <span class="month-picker" id="month-picker">May</span>
+          <div class="year-picker" id="year-picker">
+            <span class="year-change" id="pre-year"><pre>&lt;</pre></span>
+            <span id="year">2020</span>
+            <span class="year-change" id="next-year"><pre>&gt;</pre></span>
+          </div>
+        </div>
+        <div class="calendar-body">
+          <div class="calendar-week-days">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="calendar-days"></div>
+        </div>
+        <div class="calendar-footer"></div>
+        <div class="date-time-formate">
+          <div class="day-text-formate">TODAY</div>
+          <div class="date-time-value">
+            <div class="time-formate">02:51:20</div>
+            <div class="date-formate">23 - July - 2022</div>
+          </div>
+        </div>
+        <div class="month-list"></div>
+      </div>
+    </div>
+    <div class="aesth-images">
+      <img src="roses.jpg" alt="">
+      <div id="text-inspo">
+        <h2>Great things </h2>
+        <h1>take time..</h1>
+      </div>
+      <img src="satin.jpeg" alt="">
+      <img src="beach.jpg" alt="">
+      <img src="flowers.jpg" alt="">
+    </div>
+    <script src="notes.js" defer=""></script>
+    <script src="calendar.js"></script>
+
+
+  </body>
+
+</html>
