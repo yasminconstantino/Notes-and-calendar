@@ -21,7 +21,7 @@ html,
 body {
   place-items: center;
   font-family: var(--font-family);
-  background: linear-gradient(to right, #cc8a9e, #7c4f5a);
+  background: linear-gradient(to right, #bebebe, #737373);
   overflow: hidden;
 }
 
