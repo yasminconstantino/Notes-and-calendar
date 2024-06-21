@@ -1,3 +1,3 @@
 # Notes-and-calendar
 
-<img src="noteCalendar.png" width="500"/>
+<img src="noteAndCalendar.png" width="500"/>
